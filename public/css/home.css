@@ -1,2 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
 @import 'nav.css';
+
+.main-heading {
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-image: url('../img/header.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-heading .logo {
+  height: 110px;
+  display: block;
+  margin: auto;
+}
+
+.main-heading .sub-heading {
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+/* product */
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}

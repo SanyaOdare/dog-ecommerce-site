@@ -4,7 +4,7 @@
 
 .main-heading {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 100vh;
   background-image: url('../img/header.png');
   background-size: cover;
   display: flex;
@@ -25,6 +25,10 @@
   text-transform: capitalize;
   font-size: 35px;
   font-weight: 300;
+}
+
+.sub-heading {
+  margin-bottom: 60%;
 }
 
 /* product */

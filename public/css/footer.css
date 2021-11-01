@@ -34,10 +34,54 @@ footer {
   grid-column: span 2;
   text-transform: capitalize;
   color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.category .footer-links {
+.category .footer-link {
   text-decoration: none;
   text-transform: capitalize;
   color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.footer-title, .info {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 20px 0;
+  text-transform: capitalize;
+}
+
+.footer-title {
+  margin-top: 80px;
+}
+
+.footer-social-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-link {
+  color: #fff;
+  margin-left: 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.social-link:nth-child(1) {
+  margin-left: 0;
+}
+
+.footer-credit {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
 }

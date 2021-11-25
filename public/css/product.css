@@ -110,5 +110,22 @@
   color: #a33234;
   font-size: 20px;
   cursor: pointer;
+  margin: 20px 0;
   text-transform: capitalize;
+}
+
+.cart-btn {
+  margin-right: 2%;
+  background: #a33234;
+  color: #fff;
+}
+
+.detail-des {
+  padding: 0 10vw;
+  text-transform: capitalize;
+}
+
+.heading {
+  font-size: 30px;
+  margin-bottom: 30px;
 }

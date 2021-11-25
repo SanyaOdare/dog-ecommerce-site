@@ -21,10 +21,10 @@
   width: 90%;
   background: #fff;
   border-radius: 5px;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat (4, 1fr);
   height: 100px;
-  grid-gap: 10px;
+  gap: 10px;
   padding: 10px;
 }
 
@@ -128,4 +128,9 @@
 .heading {
   font-size: 30px;
   margin-bottom: 30px;
+}
+
+.des {
+  color: #383838;
+  line-height: 25px;
 }

@@ -25,7 +25,7 @@ app.use(json());
 
 // routes
 // home route
-app.get("/", (req. res) => {
+app.get("/", (_req, res) => {
   res.sendFile(join(staticPath, "index.html"));
 })
 
@@ -72,9 +72,7 @@ app.post('/signup', (req, res) => {
           })
         })
       }
-    })
-  
-    res.json('data received');
+    })    
 })
 
 // 404 route
@@ -89,4 +87,4 @@ app.use((req, res) => {
 
 app.listen(5500, () => {
   console.log('listening on port 5500.......');
-})
+});

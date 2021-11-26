@@ -20,7 +20,7 @@ submitBtn.addEventListener('click', () => {
     showAlert('enter your phone number');
   } else if (!Number(number.value) || number.value.length < 10) {
     showAlert('invalid number, please enter valid one');
-  } else if (!tac.checked) {
+  } else if (!tac) {
     showAlert('you must agree to our terms and conditions');
   } else {
     // submit form
@@ -45,8 +45,15 @@ const sendData = (path, data) => {
     body: JSON.stringify(data)
   }).then((res) => res.json())
   .then(response => {
-    console.log(response);    
+    processData(response);
   })
+}
+
+const processData = (data) => {
+  loader.style.display = null;
+  if(data.alert) {
+    showAlert(data.alert);
+  }
 }
 
 // alert function

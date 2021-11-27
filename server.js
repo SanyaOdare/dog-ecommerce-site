@@ -1,32 +1,32 @@
 // import packages
-import express, { static, json } from 'express';
-import { initializeApp, credential as _credential, firestore } from 'firebase-admin';
-import { genSalt, hash as _hash } from 'bcrypt';
-import { join } from 'path';
+const express = require('express');
+const admin = require('firebase-admin');
+const bcrypt = require('bcrypt');
+const path = require('path');
 
 // firebase admin setup
-import serviceAccount from "./dogecommercesite-firebase-adminsdk-fl68t-857b0c6458.json";
+let serviceAccount = require ("./dogecommercesite-firebase-adminsdk-fl68t-857b0c6458.json");
 
-initializeApp({
-  credential: _credential.cert(serviceAccount)
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
 });
 
-let db = firestore();
+let db = admin.firestore();
 
 // declare static path
-let staticPath = join(__dirname, "public");
+let staticPath = path.join(__dirname, "public");
 
 // initialize express.js
 const app = express();
 
 // middlewares
-app.use(static(staticPath));
-app.use(json());
+app.use(express.static(staticPath));
+app.use(express.json());
 
 // routes
 // home route
-app.get("/", (_req, res) => {
-  res.sendFile(join(staticPath, "index.html"));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(staticPath, "index.html"));
 })
 
 // signup route
@@ -58,8 +58,8 @@ app.post('/signup', (req, res) => {
         return res.json({'alert': 'email already exists'});
       } else {
         // encrypt password before storing
-        genSalt(10, (err, salt) => {
-          _hash(password, salt, (err, hash) => {
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt, (err, hash) => {
             req.body.password = hash;
             db.collection('users').doc(email).set(req.body)
             .then(data => {
